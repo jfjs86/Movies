@@ -1,0 +1,22 @@
+<ion-slides pager="ios" class="slide-full" [options]="slidesOptions">
+  <ion-slide *ngFor="let pairs of movies | pairs">
+    
+    <ion-row>
+
+      <ion-col size="12" *ngFor="let movie of pairs">
+        <ion-card (click)="showDetails(movie.id)">
+          <img [src]="movie.poster_path | image" class="poster">        
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+      
+  </ion-slide>
+
+  <ion-slide class="slides-more">
+    <ion-button (click)="onClick()" expand="full" size="large" class="btn-more" >
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
+  </ion-slide>
+
+</ion-slides>
